@@ -9,6 +9,9 @@ def call(Map config) {
         stage('Test') {
             sh config.test
         }
+        stage ('Package'){
+        sh config.package
+        }
         stage('Post') {
             echo "Successfully built for ${config.environment}"
             /* clean up our workspace */
