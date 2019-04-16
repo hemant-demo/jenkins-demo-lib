@@ -11,10 +11,10 @@ def call(Map config) {
         }
         stage('Post') {
             echo "Successfully built for ${config.environment}"
-            wrappers {
-           preBuildCleanup()
-                    }
-           }
-        }
-    }
+            always {
+            deleteDir() /* clean up our workspace */
+        }   
+      }
+   }
+}
 
