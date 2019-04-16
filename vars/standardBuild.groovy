@@ -10,7 +10,12 @@ def call(Map config) {
             sh config.test
         }
         stage('Post') {
-            echo '''Successfully built for config.environment'''
+            echo "Successfully built for ${config.environment}"
+            post { 
+            always { 
+            cleanWs()
+        }
+    }
         }
     }
 }
