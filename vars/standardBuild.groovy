@@ -11,7 +11,6 @@ def call(Map config) {
             
         }
         stage('Checkout') {
-            def WORKSPACE=pwd
             echo "cheking out in ${WORKSPACE}"
             checkout scm
         }
