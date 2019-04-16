@@ -3,8 +3,11 @@ def call(Map config) {
         stage('Checkout') {
             checkout scm
         }
-        stage('Main') {
+        stage('Compile') {
             sh config.compile
+        }
+        stage('Test') {
+            sh config.test
         }
         stage('Post') {
             echo '''Successfully built for config.environment'''
