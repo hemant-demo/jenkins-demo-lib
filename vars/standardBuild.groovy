@@ -5,7 +5,7 @@ def call(Map config) {
         }
         stage('Main') {
             echo Building config.environment
-            sh config.mainscript
+            sh config.compile
         }
         stage('Post') {
             echo '''Successfully built for config.environment'''
