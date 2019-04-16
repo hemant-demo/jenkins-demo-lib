@@ -11,11 +11,10 @@ def call(Map config) {
         }
         stage('Post') {
             echo "Successfully built for ${config.environment}"
-            post { 
-            always { 
-            cleanWs()
+            steps {
+                cleanWs()
+                }
+           }
         }
     }
-        }
-    }
-}
+
