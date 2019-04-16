@@ -3,16 +3,9 @@ def call(Map config) {
         stage('Checkout') {
             checkout scm
         }
-        stage('Compile') {
+        stage('Main') {
             echo '''Building config.environment'''
-            sh config.compile
-        }
-        stage('Test') {
-            sh config.test
-        }
-        
-        stage('Package') {
-            sh config.pack
+            sh config.mainscript
         }
         stage('Post') {
             echo '''Successfully built for config.environment'''
