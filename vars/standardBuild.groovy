@@ -3,8 +3,15 @@ def call(Map config) {
         stage('Checkout') {
             checkout scm
         }
-        stage('Main') {
-            sh config.mainScript
+        stage('Compile') {
+            sh config.compile
+        }
+        stage('Test') {
+            sh config.test
+        }
+        
+        stage('Package') {
+            sh config.package
         }
         stage('Post') {
             sh config.postScript
