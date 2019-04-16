@@ -4,7 +4,7 @@ def call(Map config) {
             checkout scm
         }
         stage('Compile') {
-            echo Building config.environment
+            echo '''Building config.environment'''
             sh config.compile
         }
         stage('Test') {
@@ -12,10 +12,10 @@ def call(Map config) {
         }
         
         stage('Package') {
-            sh config.package
+            sh config.pack
         }
         stage('Post') {
-            echo Successfully built for config.environment
+            echo '''Successfully built for config.environment'''
         }
     }
 }
