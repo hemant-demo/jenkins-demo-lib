@@ -12,11 +12,11 @@ def call(Map config) {
         stage('Post') {
             echo "Successfully built for ${config.environment}"
             /* clean up our workspace */
-            deleteDir()
+           // deleteDir()
             /* clean up tmp directory */
-            dir("${workspace}@tmp") {
-                deleteDir()
-            }        
+            //dir("${workspace}@tmp") {
+              //  deleteDir()
+            //}        
       }
    }
 }
