@@ -4,6 +4,7 @@ def call(Map config) {
             def workspace = "${env.WORKSPACE}"
     }
         stage('Cleaning Up Workspace'){
+            echo "Variable testing ${env.workspace}"
             echo "Cleaning up ${WORKSPACE}"
             // clean up our workspace 
            deleteDir()
@@ -15,7 +16,6 @@ def call(Map config) {
         }
         stage('Checkout') {
             echo "cheking out in ${WORKSPACE}"
-            echo "Variable testing ${workspace}"
             checkout scm
         }
         stage('Compile') {
