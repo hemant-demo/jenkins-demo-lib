@@ -13,7 +13,7 @@ def call(Map config) {
         stage('Checkout') {
             echo "cheking out in ${WORKSPACE}"
             checkout scm
-            echo "Variable testing""
+            echo "Variable testing"
             sh config.workspace
         }
         stage('Compile') {
