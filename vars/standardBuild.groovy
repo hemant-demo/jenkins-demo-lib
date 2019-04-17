@@ -1,7 +1,6 @@
 def call(Map config) {
     node {
         stage('Cleaning Up Workspace'){
-            echo "Variable testing ${config.workspace}"
             echo "Cleaning up ${WORKSPACE}"
             // clean up our workspace 
            deleteDir()
@@ -14,6 +13,7 @@ def call(Map config) {
         stage('Checkout') {
             echo "cheking out in ${WORKSPACE}"
             checkout scm
+            echo "Variable testing ${config.workspace}"
         }
         stage('Compile') {
             echo "Compiling in ${WORKSPACE}"
