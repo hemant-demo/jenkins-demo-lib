@@ -12,7 +12,7 @@ def call(Map config) {
         }
         stage('Checkout') {
             echo "cheking out in ${WORKSPACE}"
-            def workspace=${WORKSPACE}
+            workspace=${WORKSPACE}
             checkout scm
         }
         stage('Compile') {
