@@ -1,10 +1,7 @@
 def call(Map config) {
     node {
-        environment {
-            def workspace = "${env.WORKSPACE}"
-    }
         stage('Cleaning Up Workspace'){
-            echo "Variable testing ${env.workspace}"
+            echo "Variable testing ${config.workspace}"
             echo "Cleaning up ${WORKSPACE}"
             // clean up our workspace 
            deleteDir()
