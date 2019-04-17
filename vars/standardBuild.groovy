@@ -1,7 +1,7 @@
 def call(Map config) {
     node {
         environment {
-            def workspace = "${WORKSPACE}"
+            def workspace = "${env.WORKSPACE}"
     }
         stage('Cleaning Up Workspace'){
             echo "Cleaning up ${WORKSPACE}"
